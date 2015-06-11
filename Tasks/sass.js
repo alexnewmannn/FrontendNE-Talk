@@ -11,17 +11,9 @@ var config = require('./Config/config.js');
 var gutil = require('gulp-util')
 
 gulp.task('sass', function() {
-    return gulp.src(['./scss/main.scss', './scss/inline/main.scss'])
+    return gulp.src(['./scss/main.scss', './scss/inline/main.scss'], {base: 'scss'})
 		.pipe(plugins.sass(config.sass))
         .pipe(plugins.autoprefixer(config.autoprefix))
         .pipe(plugins.minifyCss())
         .pipe(gulp.dest('./dist/css'));
 });
-
-gulp.task('inlineSass', function() {
-	return gulp.src('./scss/inline/*.scss')
-		.pipe(plugins.sass(config.sass))
-        .pipe(plugins.autoprefixer(config.autoprefix))
-        .pipe(plugins.minifyCss())
-        .pipe(gulp.dest('./dist/css/inline'));
-})

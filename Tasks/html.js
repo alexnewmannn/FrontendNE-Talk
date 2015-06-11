@@ -3,7 +3,7 @@ var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
 var config = require('./Config/config.js');
 
-gulp.task('inlinesource', ['inlineSass'], function() {
+gulp.task('inlinesource', ['sass'], function() {
 	return gulp.src('./index.html')
 		.pipe(plugins.inlineSource())
 		.pipe(gulp.dest('./dist'));

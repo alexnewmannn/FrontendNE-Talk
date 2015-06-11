@@ -1,8 +1,1 @@
-body {
-  background: blue;
-  -webkit-transition: 0.3s all linear;
-          transition: 0.3s all linear;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
+html{font-size:10px}body{background:#f8f8f8;margin:0;font-family:'Open Sans',Helvetica,Arial;font-size:1.6rem}header{height:80vh;background:#cf4646;color:#fff;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-ms-flex-align:center;align-items:center}header h1{margin:auto;font-size:6rem;line-height:9.708rem}

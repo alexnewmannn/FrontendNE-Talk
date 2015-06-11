@@ -1,5 +1,6 @@
-body {
-	background: blue;
-	transition: 0.3s all linear;
+@import 'helpers/_variables';
+footer {
+	background: #ccc;
 	display: flex;
+	transition: 0.3s linear all;
 }

@@ -1,3 +1,3 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['sass', 'minify', 'removeRaw']);
+gulp.task('default', ['livereload', 'sass', 'minify', 'removeRaw']);

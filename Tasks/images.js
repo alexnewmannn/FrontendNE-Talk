@@ -1,3 +1,5 @@
+'use strict';
+
 var del = require('del');
 var gulp = require('gulp');
 var vinylPaths = require('vinyl-paths');
@@ -7,7 +9,7 @@ var plugins = gulpLoadPlugins();
 
 gulp.task('svgmin', function() {
 	return gulp.src('./Images/**/raw_*.svg')
-		.pipe(plugins.svgmin())
+		.pipe(plugins.svgmin());
 });
 
 gulp.task('kraken', function() {

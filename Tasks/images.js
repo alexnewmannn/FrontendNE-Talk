@@ -29,7 +29,7 @@ gulp.task('renameRaw', ['svgmin', 'kraken'], function() {
 		.pipe(plugins.rename(function(path) {
 			path.basename = path.basename.substring(4, path.basename.length);
 		}))
-		.pipe(gulp.dest('./Images/'));
+		.pipe(gulp.dest('./dist/Images/'));
 });
 
 gulp.task('removeRaw', ['renameRaw'], function() {

@@ -15,3 +15,8 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./dist/css'))
         .pipe(plugins.livereload());
 });
+
+gulp.task('uncss', function() {
+	return gulp.src('./dist/css')
+        .pipe(plugins.uncss(config.uncss))
+});

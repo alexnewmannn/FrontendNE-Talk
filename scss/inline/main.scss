@@ -1,7 +1,10 @@
 @import '../helpers/_variables';
+@import '../helpers/_typography';
+@import '../helpers/_animations';
 
 html {
 	font-size: 10px;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -13,37 +16,40 @@ body {
 }
 
 header {
-	height: 60vh;
-	background: url('Images/gulp-pattern.png') 50% 0 / 200px $red;
-	color: #fff;
-	display: flex;
-	align-items: center;
+	height: 50vh;
+	position: relative;
+	overflow: hidden;
+
+	.background {
+		background: url('Images/gulp-pattern.png') 50% 0 / 200px $red;
+		height: 200%;
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	.logo-container {
+		flex-direction: column;
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+
+	h2 {
+		display: block;
+		padding-bottom: 20px;
+		color: fade-out(#fff, 0.4);
+		font-weight: normal;
+	}
 
 	img {
 		margin: auto;
-	}
-
-	h1 {
-		margin: auto;
-		font-size: 10rem;
-		font-weight: normal
+		padding-top: 78px;
 	}
 }
 
-.fade-in {
-	opacity: 0;
-	animation: 0.5s linear fadeIn 0.3s forwards;
-}
-
-@keyframes fadeIn {
-	from {
-		transform: translateY(-200%);
-		opacity: 0;
-	}
-	70% {
-		transform: none;
-	}
-	100% {
-		opacity: 1;
-	}
+section {
+	padding: 15px;
 }

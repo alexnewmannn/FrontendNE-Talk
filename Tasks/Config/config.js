@@ -19,5 +19,8 @@ module.exports = {
 	],
 	autoprefix: {
 		browsers: ['last 2 versions']
+	},
+	uncss: {
+    	html: ['index.html']
 	}
-}
+};

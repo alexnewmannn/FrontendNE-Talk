@@ -17,11 +17,7 @@ gulp.task('kraken', function() {
 		'./Images/**/raw_*.png',
 		'./Images/**/raw_*.jpg'
 	])
-	.pipe(plugins.kraken({
-		key: 'f015613e4377a24834e90823a946c093',
-		secret: '73bbc6f7c8085848af31d7e9eb1fd63b22d6e30e',
-		lossy: false
-	}));
+		.pipe(plugins.kraken(config.kraken));
 });
 
 gulp.task('renameRaw', ['svgmin', 'kraken'], function() {

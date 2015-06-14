@@ -3,23 +3,37 @@
 @import '../helpers/_animations';
 
 html {
-	font-size: 9px;
-
-	@media (min-width: 768px) {
-		font-size: 10px;
-	}
+	font-size: 10px;
 	-webkit-font-smoothing: antialiased;
+	font-family: 'Open Sans', Helvetica, Arial;
 }
 
 body {
 	background: #f8f8f8;
 	margin: 0;
-	font-family: 'Open Sans', Helvetica, Arial;
 	font-size: 1.6rem;
 	line-height: 1.6rem * $ratio;
 }
 
-header {
+.sticky {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: black;
+	height: 50px;
+	transform: translateY(-50px);
+	transition: transform 0.3s linear, visibility 0.3s linear 0.3s;
+	visibility: hidden;
+
+	&.show {
+		visibility: visible;
+		transition: transform 0.3s linear, visibility 0.3s linear;
+		transform: translateY(0);
+	}
+}
+
+.header {
 	height: 80vh;
 	position: relative;
 	overflow: hidden;
@@ -28,9 +42,7 @@ header {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: flex-end;
-	align-content: center;
 	align-items: center;
-
 
 	&::before {
 		background: url('Images/gulp-pattern.png') 50% 0 / 200px $red;
@@ -39,27 +51,15 @@ header {
 		width: 100%;
 		bottom: 0;
 		left: 0;
-		z-index: -1;
 		content: '';
-	}
-
-	.logo-container {
-	/* 	flex-direction: column;
-	display: flex;
-	align-items: center; */
-		display: table;
-		height: 100%;
-
-		* {
-			display: table-cell;
-			vertical-align: middle;
-		}
 	}
 
 	h1 {
 		margin: 0 0 30px;
 		color: #fff;
-		text-align: center
+		text-align: center;
+		position: relative;
+		font-family: 'Montserrat';
 	}
 
 	h2 {

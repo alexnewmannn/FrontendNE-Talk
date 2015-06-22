@@ -1,6 +1,10 @@
 module.exports = {
 	sass: {
-		outputStyle: 'nested'
+		outputStyle: 'nested',
+		onError: function(err) {
+			console.log('hi')
+			return $.notify().write(err)
+		}
 	},
 	htmlmin: {
 		minifyJS: true,
@@ -27,5 +31,11 @@ module.exports = {
 			key: 'f015613e4377a24834e90823a946c093',
 			secret: '73bbc6f7c8085848af31d7e9eb1fd63b22d6e30e',
 			lossy: false
+	},
+	gzip: {
+		threshold: '1kb',
+		gzipOptions: {
+			level: 9
+		}
 	}
 };

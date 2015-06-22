@@ -5,11 +5,12 @@ var gulp = require('gulp');
 var vinylPaths = require('vinyl-paths');
 var config = require('./Config/config.js');
 var gulpLoadPlugins = require('gulp-load-plugins');
-var plugins = gulpLoadPlugins();
+var $ = gulpLoadPlugins();
 
 gulp.task('svgmin', function() {
 	return gulp.src('./Images/**/raw_*.svg')
-		.pipe(plugins.svgmin());
+		.pipe($.plumber())
+		.pipe($.svgmin());
 });
 
 gulp.task('kraken', function() {
@@ -17,12 +18,14 @@ gulp.task('kraken', function() {
 		'./Images/**/raw_*.png',
 		'./Images/**/raw_*.jpg'
 	])
-		.pipe(plugins.kraken(config.kraken));
+		.pipe($.plumber())
+		.pipe($.kraken(config.kraken));
 });
 
 gulp.task('renameRaw', ['svgmin', 'kraken'], function() {
 	return gulp.src(config.imgPaths)
-		.pipe(plugins.rename(function(path) {
+		.pipe($.plumber())
+		.pipe($.rename(function(path) {
 			path.basename = path.basename.substring(4, path.basename.length);
 		}))
 		.pipe(gulp.dest('./dist/Images/'));
@@ -30,5 +33,6 @@ gulp.task('renameRaw', ['svgmin', 'kraken'], function() {
 
 gulp.task('removeRaw', ['renameRaw'], function() {
 	return gulp.src(config.imgPaths)
+		.pipe($.plumber())
 		.pipe(vinylPaths(del));
 });

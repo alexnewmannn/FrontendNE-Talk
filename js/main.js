@@ -1,5 +1,8 @@
-'use strict';
+// 'use strict';
 
 $(function() {
-	alert('hi')
+	var scroll = require('./scroll.js');
+	console.log(scroll)
+	window.onscroll = scroll;
+
 });

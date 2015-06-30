@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
@@ -14,7 +16,7 @@ module.exports = function(grunt) {
 		},
 		autoprefixer: {
 			options: {
-				browsers: ["last 10 versions", "ie 6"]
+				browsers: ['last 10 versions', 'ie 6']
 			},
 			dist: {
 				files: {

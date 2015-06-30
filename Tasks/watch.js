@@ -8,4 +8,5 @@ gulp.task('watch', function() {
 	gulp.watch(['./scss/**/*.scss'], ['sass']);
 	gulp.watch(['./index.html', './scss/inline/*.scss', './scss/helpers/**/*.scss'], ['minify', 'livereload']);
 	gulp.watch(['./Images/**/*.+(png|svg|jpg)'], ['removeRaw']);
+	gulp.watch(['./js/**/*.js'], ['browserify']);
 });

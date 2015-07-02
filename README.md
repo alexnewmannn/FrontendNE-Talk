@@ -12,5 +12,5 @@ Feel free to tweet me [@alexnewmn](https://twitter.com/alexnewmn) if you have an
 
 [An Interactive Guide to package.json](http://browsenpm.org/package.json)
 
-## Resources
+[Journey of a Javascript Framework - Andrew Humphreys] (http://engineering.bedegaming.com/blog/2015/04/16/orchestra-the-journey-of-a-javascript-framework/)
 
